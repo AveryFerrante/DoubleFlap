@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$screen-sm-max-height: 528px;
+
+$theme-main-background-color: #4d006d;
+$theme-main-background-color-alt: #5c1779;
+$theme-secondary-background-color: #743a8d;
+$theme-alt-color: #006D4D; 
+$theme-default-text-color: white;
+$theme-light-black-color: #1A1110;
+
+body {
+    background-color: $theme-main-background-color;
+    color: $theme-default-text-color;
+    font-family: 'Nunito Sans', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.button-alt {
+    padding: 8px 16px;
+    background-color: $theme-alt-color;
+    color: $theme-default-text-color;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color linear 0.25s;
+}
+
+.button-alt:hover {
+    background-color: #00543b;
+}
+
+@mixin sm {
+    @media all and (min-width: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media all and (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media all and (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media all and (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
+
+@mixin sm-height {
+    @media all and (max-height: #{$screen-sm-max-height}) {
+        @content;
+    }
+}

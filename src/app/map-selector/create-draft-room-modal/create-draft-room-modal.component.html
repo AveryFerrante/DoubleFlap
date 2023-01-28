@@ -1,0 +1,32 @@
+<app-modal [title]="'Create a Draft Room'" (closeModal)="onCloseModal()">
+    <div class="content">
+        <div class="content-item">
+            <span class="input-label">Create As:</span>
+
+            <div class="radio-button-section">
+                <ng-container *ngFor="let option of createAsOptions">
+                    <input type="radio" [id]="option.value" name="create_as" [value]="option.value" [(ngModel)]="createAsSelection">
+                    <label for="create-as">{{ option.displayName }}</label>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="content-item">
+            <span class="input-label" [ngClass]="{ 'disabled': isCreatingAsAdmin }">Team Name:</span>
+            <input type="text" class="input" [ngClass]="{ 'disabled': isCreatingAsAdmin }" [(ngModel)]="teamName" required [disabled]="isCreatingAsAdmin">
+        </div>
+
+        <div class="content-item">
+            <span class="input-label">Select Format:</span>
+            <select class="select" name="cars" id="cars" [(ngModel)]="formatSelection" required>
+                <option *ngFor="let option of formatSelectionOptions" [value]="option.value">{{ option.displayName }}
+                </option>
+            </select>
+        </div>
+
+        <div class="footer">
+            <span class="error-text" *ngIf="errorText !== ''">*{{ errorText }}</span>
+            <div class="button-alt button-alignment" (click)="onCreate()">Create</div>
+        </div>
+    </div>
+</app-modal>

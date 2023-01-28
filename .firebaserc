@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "doubleflap-47e8f"
+  },
+  "targets": {
+    "doubleflap-47e8f": {
+      "hosting": {
+        "DoubleFlap": [
+          "doubleflap-47e8f"
+        ]
+      }
+    }
+  }
+}

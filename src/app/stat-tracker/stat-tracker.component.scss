@@ -1,0 +1,40 @@
+@import '../../styles.scss';
+
+
+
+.main-message-container {
+    margin-top: 160px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: $theme-secondary-background-color;
+    box-shadow: 5px 5px 10px $theme-light-black-color; /* x-offset, y-offset, blur-radius, color */
+    font-size: 1.5rem;
+
+    @include md {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+
+    @include lg {
+        font-size: 2rem;
+    }
+
+    @include xl {
+        margin-left: 160px;
+        margin-right: 160px;
+    }
+
+    @include sm-height {
+        margin-top: 60px;
+    }
+}
+
+.text-container {
+    padding: 35px 18px 35px 18px;
+    text-align: center;
+
+    @include lg {
+        padding: 70px 36px 70px 36px;
+    }
+}

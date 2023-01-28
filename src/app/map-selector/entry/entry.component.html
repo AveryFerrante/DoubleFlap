@@ -1,0 +1,6 @@
+<div class="options-display-container">
+    <div class="option-selection clickable" (click)="onCreateDraftRoomClick()">Create a Draft Room</div>
+    <div class="option-selection clickable">Join a Draft Room</div>
+</div>
+
+<app-create-draft-room-modal *ngIf="showCreateDraftRoomModal" (closeModal)="onCloseModal()"></app-create-draft-room-modal>
